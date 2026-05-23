@@ -1,0 +1,186 @@
+{% extends 'school_app/base.html' %}
+{% load static %}
+
+{% block title %}Notices & Circulars - St. Xavier's School, Harmutty{% endblock %}
+
+{% block content %}
+<!-- Heavy Duty Ticker Bar Layout -->
+<style>
+    .ticker-bar {
+        background-color: #1e3a8a !important; /* Forces primary school blue */
+        width: 100% !important;
+        display: block !important;
+        clear: both !important;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+        border-bottom: 3px solid #b91c1c; /* Sharp crimson edge */
+        font-family: Arial, sans-serif;
+    }
+
+    .ticker-container {
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .ticker-label {
+        background-color: #b91c1c !important; /* Crimson label tag */
+        color: #ffffff !important;
+        padding: 14px 20px;
+        font-weight: bold;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        display: inline-block;
+        box-shadow: 4px 0 8px rgba(0,0,0,0.2);
+        z-index: 5;
+    }
+
+    .ticker-moving-track {
+        flex-grow: 1 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        background-color: #1e3a8a !important;
+        padding: 0 !important;
+        height: 100% !important;
+    }
+
+    /* Standard high-reliability motion layout */
+    .ticker-marquee-element {
+        width: 100% !important;
+        color: #ffffff !important;
+        font-size: 1rem !important;
+        font-weight: 500;
+    }
+
+    .ticker-item {
+        display: inline-flex !important;
+        align-items: center !important;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        padding: 0 40px !important; /* Spacing between notices */
+    }
+
+    .ticker-date-badge {
+        color: #cbd5e1 !important;
+        font-size: 0.85rem !important;
+        background-color: rgba(0, 0, 0, 0.3) !important;
+        padding: 2px 8px;
+        border-radius: 4px;
+        margin-left: 10px;
+        font-weight: normal;
+    }
+
+    .ticker-download-link {
+        color: #fde047 !important; /* Bright high-contrast yellow */
+        font-weight: bold;
+        text-decoration: none !important;
+        margin-left: 12px;
+        border-bottom: 1px dashed #fde047;
+    }
+
+    .ticker-download-link:hover {
+        color: #ffffff !important;
+        border-bottom: 1px solid #ffffff;
+    }
+
+    .ticker-dot-divider {
+        margin-left: 40px;
+        color: #fca5a5 !important;
+        font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+        .ticker-container {
+            flex-direction: column !important;
+            align-items: stretch !important;
+        }
+        .ticker-label {
+            text-align: center;
+            padding: 8px;
+        }
+    }
+</style>
+
+<!-- Page Banner -->
+<section class="page-banner" style="background-image: url({% static "images/IMG_1373.jpeg" %});">
+    <div class="banner-overlay">
+        <div class="banner-content">
+            <h1>Notices & Circulars</h1>
+            <p class="breadcrumb"><a href="{% url 'home' %}">Home</a> / Notices</p>
+        </div>
+    </div>
+</section>
+
+<!-- Bulletproof Native Ticker Bar -->
+<div class="ticker-bar">
+    <div class="ticker-container">
+        <div class="ticker-label">
+            📋 Latest Notices
+        </div>
+        <div class="ticker-moving-track">
+            <!-- Native scrolling layout avoids CSS path blocking or JS calculation loops -->
+            <marquee class="ticker-marquee-element" behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+                {% for notice in notices|slice:":3" %}
+                    <span class="ticker-item">
+                        <strong>{{ notice.title }}</strong>
+                        <span class="ticker-date-badge">{{ notice.published_date|date:"M d, Y" }}</span>
+                        <a href="{{ notice.pdf_file.url }}" target="_blank" class="ticker-download-link">
+                            Download PDF 📥
+                        </a>
+                        <span class="ticker-dot-divider">●</span>
+                    </span>
+                {% empty %}
+                    <span class="ticker-item">
+                        📢 No formal notices uploaded at this time. Check back later for active updates!
+                    </span>
+                {% endfor %}
+            </marquee>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================================
+     NOTICES LISTING GRID BELOW
+     ============================================================================ -->
+<section class="section" id="all-notices">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">School Notices</h2>
+        <p class="section-subtitle animate-on-scroll">Stay updated with the latest announcements, circulars, and important notices from St. Xavier's School.</p>
+        
+        <div class="notices-list">
+            {% for notice in notices %}
+            <article class="notice-card notice-card-full animate-on-scroll">
+                <div class="notice-date">
+                    <span class="notice-day">{{ notice.published_date|date:"d" }}</span>
+                    <span class="notice-month">{{ notice.published_date|date:"M" }}</span>
+                    <span class="notice-year">{{ notice.published_date|date:"Y" }}</span>
+                </div>
+                <div class="notice-content">
+                    <h3 class="notice-title">{{ notice.title }}</h3>
+                    {% if notice.description %}
+                    <p class="notice-description">{{ notice.description }}</p>
+                    {% endif %}
+                    <div class="notice-actions">
+                        <a href="{{ notice.pdf_file.url }}" class="btn-download" target="_blank" rel="noopener">
+                            <i class="fas fa-file-pdf"></i> Download PDF
+                        </a>
+                        <span class="notice-meta">
+                            <i class="fas fa-calendar-alt"></i> Published: {{ notice.published_date|date:"d F Y" }}
+                        </span>
+                    </div>
+                </div>
+            </article>
+            {% empty %}
+            <div class="no-notices animate-on-scroll">
+                <i class="fas fa-bell-slash"></i>
+                <h3>No Notices Available</h3>
+                <p>There are no notices available at this time. Please check back later for updates and announcements.</p>
+                <a href="{% url 'home' %}" class="btn btn-primary">Return to Home</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

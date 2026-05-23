@@ -1,0 +1,234 @@
+{% load static %}
+<!-- ============================================================================
+     BASE TEMPLATE - St. Xavier's School, Harmutty
+     A Don Bosco Institution | CBSE Affiliation No: 230010
+     ============================================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="St. Xavier's School, Harmutty - A Don Bosco Institution offering Higher Secondary Education under CBSE. Affiliation No: 230010.">
+    <meta name="keywords" content="St Xavier School, Harmutty, Don Bosco, CBSE, Lakhimpur, Assam, Education">
+    <meta name="author" content="St. Xavier's School, Harmutty">
+    <meta property="og:title" content="St. Xavier's School, Harmutty">
+    <meta property="og:description" content="A Don Bosco Institution offering Higher Secondary Education under CBSE.">
+    <meta property="og:type" content="website">
+    <title>{% block title %}St. Xavier's School, Harmutty - A Don Bosco Institution{% endblock %}</title> <br
+
+    <!-- Google Fonts - Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- School Website Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Custom Top Centered Navbar Styling -->
+    <style>
+        .quick-links-bar {
+            width: 100%;
+            background-color: #f8f9fa; /* Light grey bar background */
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .quick-links-grid {
+            display: flex;
+            justify-content: center;  /* Centers items horizontally */
+            align-items: center;      /* Centers items vertically */
+            gap: 24px;                /* Equal spacing between links */
+            flex-wrap: wrap;          /* Keeps it responsive on mobile screens */
+            margin: 0;
+            padding: 0;
+        }
+
+        .quick-link-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;                 /* Space between icon and text */
+            text-decoration: none;
+            color: #495057;           /* Elegant dark grey color */
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .quick-link-item i {
+            font-size: 15px;          /* Clean sizing for icons */
+        }
+
+        .quick-link-item:hover {
+            color: #0056b3;           /* Change to your school's signature color */
+            transform: translateY(-1px); /* Slight interactive lift */
+        }
+    </style>
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- ============================================================================
+         QUICK LINKS NAVIGATION BAR (Centered at the top of the viewport)
+         ============================================================================ -->
+    <!-- <section class="quick-links-bar" id="quick-links">
+        <div class="container">
+            <div class="quick-links-grid">
+                <a href="{% url 'home' %}" class="quick-link-item animate-on-scroll">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="{% url 'academics' %}" class="quick-link-item animate-on-scroll">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Academics</span>
+                </a>
+                <a href="{% url 'campus' %}" class="quick-link-item animate-on-scroll">
+                    <i class="fas fa-school"></i>
+                    <span>Campus</span>
+                </a>
+                <a href="{% url 'faculty' %}" class="quick-link-item animate-on-scroll">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Faculty</span>
+                </a>
+                <a href="{% url 'notices' %}" class="quick-link-item animate-on-scroll">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Notices</span>
+                </a>
+                <a href="{% url 'contact' %}" class="quick-link-item animate-on-scroll">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- TOP INFO BAR - School contact details & CBSE info -->
+  
+
+    <!-- STICKY HEADER + NAV WRAPPER -->
+    <div class="sticky-header-wrapper" id="sticky-wrapper">
+        <header class="site-header" id="site-header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="{% url 'home' %}" class="logo-area">
+                        <img src="{% static 'images/logo.png' %}" alt="St. Xavier's School Logo" class="logo-img">
+                        <div class="logo-text">
+                            <h1 class="school-name">ST. XAVIER'S SCHOOL</h1>
+                            <p class="school-subtitle">A Don Bosco Institution, Harmutty</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN NAVIGATION -->
+        <nav class="main-nav" id="main-nav">
+            <div class="container nav-container">
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links" id="nav-links">
+                    <a href="{% url 'home' %}" class="nav-link">Home</a>
+                    <a href="{% url 'academics' %}" class="nav-link">Academics</a>
+                    <a href="{% url 'campus' %}" class="nav-link">Campus</a>
+                    <a href="{% url 'faculty' %}" class="nav-link">Faculty</a>
+                    <a href="{% url 'notices' %}" class="nav-link">Notices</a>
+                    <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="site-main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-heading">About the School</h3>
+                    <p>St. Xavier's School, Harmutty, is a Don Bosco Institution committed to providing quality education rooted in values, discipline, and holistic development since its inception.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/Donboscoharmutty/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/Donboscoharmutty/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@saxahadonbosco2185" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/Donboscoharmutty/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/9181533805" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'home' %}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="{% url 'academics' %}"><i class="fas fa-chevron-right"></i> Academics</a></li>
+                        <li><a href="{% url 'campus' %}"><i class="fas fa-chevron-right"></i> Campus</a></li>
+                        <li><a href="{% url 'faculty' %}"><i class="fas fa-chevron-right"></i> Faculty</a></li>
+                        <li><a href="{% url 'notices' %}"><i class="fas fa-chevron-right"></i> Notices</a></li>
+                        <li><a href="{% url 'contact' %}"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+               <div class="footer-col">
+    <h3 class="footer-heading">Contact Us</h3>
+    <ul class="footer-contact">
+        <li>
+            <i class="fas fa-map-marker-alt"></i> 
+            <a href="https://maps.google.com/?q=St.+Xavier's+High+School,+Harmutty&ll=27.1237963,93.8573673&z=17" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               style="color: inherit; text-decoration: none; cursor: pointer;">
+               Harmutty, Lakhimpur, Assam 787001, India
+            </a>
+        </li>
+        <li><i class="fas fa-phone"></i> +91 9181533805 / 03752-291165</li>
+        <li><i class="fas fa-envelope"></i> saxaha@gmail.com</li>
+        <li><i class="fas fa-clock"></i> Mon - Sat: 8:00 AM - 3:00 PM</li>
+    </ul>
+</div>
+            </div>
+  <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <span><i class="fas fa-envelope"></i> saxaha@gmail.com</span>
+                    <span><i class="fas fa-phone"></i> +91 9181533805</span>
+                </div>
+                <div class="top-bar-right">
+                    <span><i class="fas fa-certificate"></i> CBSE Affiliation No: 230010</span>
+                </div>
+            </div>
+        </div>
+    </div>  
+            <div class="visitor-counter-bar">
+                <div class="visitor-stat">
+                    <i class="fas fa-eye"></i>
+                    <span class="visitor-label">Today's Visitors</span>
+                    <span class="visitor-number">{{ today_visits }}</span>
+                </div>
+                <div class="visitor-stat">
+                    <i class="fas fa-globe"></i>
+                    <span class="visitor-label">Total Visitors</span>
+                    <span class="visitor-number">{{ total_visits }}</span>
+                </div>
+            </div>
+
+            <div class="footer-bottom  ">
+                <p>&copy; 2025 St. Xavier's School, Harmutty. A Don Bosco Institution. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

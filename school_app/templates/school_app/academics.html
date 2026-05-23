@@ -1,0 +1,204 @@
+{% extends 'school_app/base.html' %}
+{% load static %}
+
+{% block title %}Academics - St. Xavier's School, Harmutty{% endblock %}
+
+{% block content %}
+<!-- Page Banner -->
+<section class="page-banner" style="background-image: url({% static 'images/IMG_1383.png' %});">
+    <div class="banner-overlay">
+        <div class="banner-content">
+            <h1>Academics</h1>
+            <p class="breadcrumb"><a href="{% url 'home' %}">Home</a> / Academics</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     CBSE AFFILIATION SECTION
+     EDIT: Update affiliation details below
+     ============================================================================ -->
+<section class="section section-alt" id="affiliation">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">CBSE Affiliation</h2>
+        <div class="affiliation-card animate-on-scroll">
+            <div class="affiliation-icon"><i class="fas fa-certificate"></i></div>
+            <div class="affiliation-details">
+                <!-- EDIT: Update affiliation information below -->
+                <h3>Central Board of Secondary Education</h3>
+                <p><strong>Affiliation Number:</strong> 230010</p>
+                <p><strong>School Code:</strong> 14537</p>
+                <p><strong>Level:</strong> Higher Secondary (Class I to XII)</p>
+                <p>St. Xavier's School, Harmutty is proudly affiliated to CBSE, New Delhi, offering quality education following the national curriculum framework and NEP 2020 guidelines.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     CLASS STRUCTURE
+     EDIT: Update class levels and descriptions below
+     ============================================================================ -->
+<section class="section" id="class-structure">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Our Class Structure</h2>
+        <div class="structure-grid">
+            <div class="structure-card animate-on-scroll">
+                <div class="structure-icon"><i class="fas fa-baby"></i></div>
+                <h3>Pre-Primary</h3>
+                <p>Nursery & Kindergarten (Balavatika)</p>
+                <p class="structure-desc">A nurturing start to the learning journey through play-based and activity-oriented education.</p>
+            </div>
+            <div class="structure-card animate-on-scroll">
+                <div class="structure-icon"><i class="fas fa-book-reader"></i></div>
+                <h3>Primary</h3>
+                <p>Class I to V</p>
+                <p class="structure-desc">Building strong foundations in language, mathematics, science, and social awareness.</p>
+            </div>
+            <div class="structure-card animate-on-scroll">
+                <div class="structure-icon"><i class="fas fa-microscope"></i></div>
+                <h3>Middle School</h3>
+                <p>Class VI to VIII</p>
+                <p class="structure-desc">Expanding horizons with deeper exploration of subjects and developing critical thinking skills.</p>
+            </div>
+            <div class="structure-card animate-on-scroll">
+                <div class="structure-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Secondary</h3>
+                <p>Class IX to X</p>
+                <p class="structure-desc">Rigorous CBSE curriculum preparing students for board examinations and future academic pursuits.</p>
+            </div>
+            <div class="structure-card animate-on-scroll">
+                <div class="structure-icon"><i class="fas fa-university"></i></div>
+                <h3>Higher Secondary</h3>
+                <p>Class XI to XII</p>
+                <p class="structure-desc">Specialized streams — Science, Commerce, and Arts — preparing students for competitive examinations and higher education.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     STREAMS OFFERED
+     EDIT: Update stream details below
+     ============================================================================ -->
+<section class="section section-alt" id="streams">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Streams Offered (Class XI & XII)</h2>
+        <div class="streams-grid">
+            <div class="card animate-on-scroll">
+                <div class="card-body" style="text-align:center;">
+                    <i class="fas fa-flask" style="font-size:3rem;color:var(--accent);margin-bottom:20px;"></i>
+                    <h3 class="card-title">Science</h3>
+                    <ul class="stream-subjects">
+                        <li>Physics</li>
+                        <li>Chemistry</li>
+                        <li>Mathematics / Biology</li>
+                        <li>English</li>
+                        <li>Computer Science (Optional)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card animate-on-scroll">
+                <div class="card-body" style="text-align:center;">
+                    <i class="fas fa-chart-line" style="font-size:3rem;color:var(--accent);margin-bottom:20px;"></i>
+                    <h3 class="card-title">Commerce</h3>
+                    <ul class="stream-subjects">
+                        <li>Accountancy</li>
+                        <li>Business Studies</li>
+                        <li>Economics</li>
+                        <li>English</li>
+                        <li>Mathematics (Optional)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card animate-on-scroll">
+                <div class="card-body" style="text-align:center;">
+                    <i class="fas fa-palette" style="font-size:3rem;color:var(--accent);margin-bottom:20px;"></i>
+                    <h3 class="card-title">Arts / Humanities</h3>
+                    <ul class="stream-subjects">
+                        <li>History</li>
+                        <li>Political Science</li>
+                        <li>Geography</li>
+                        <li>English</li>
+                        <li>Economics (Optional)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     CURRICULUM HIGHLIGHTS
+     EDIT: Update curriculum highlights below
+     ============================================================================ -->
+<section class="section" id="curriculum">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Curriculum Highlights</h2>
+        <div class="highlights-grid">
+            <div class="highlight-item animate-on-scroll">
+                <i class="fas fa-lightbulb"></i>
+                <h3>NEP 2020 Aligned</h3>
+                <p>Our curriculum is aligned with the National Education Policy 2020, emphasizing experiential learning, competency-based assessments, and multidisciplinary approaches.</p>
+            </div>
+            <div class="highlight-item animate-on-scroll">
+                <i class="fas fa-laptop"></i>
+                <h3>Smart Classrooms</h3>
+                <p>Technology-integrated classrooms with digital boards and multimedia resources to make learning interactive, engaging, and effective.</p>
+            </div>
+            <div class="highlight-item animate-on-scroll">
+                <i class="fas fa-clipboard-check"></i>
+                <h3>Regular Assessments</h3>
+                <p>Continuous and comprehensive evaluation through periodic tests, projects, and formative assessments to track student progress.</p>
+            </div>
+            <div class="highlight-item animate-on-scroll">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Value Education</h3>
+                <p>Moral and ethical education rooted in the Salesian tradition, fostering compassion, integrity, and social responsibility.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     CO-CURRICULAR ACTIVITIES
+     EDIT: Update activities below
+     ============================================================================ -->
+<section class="section section-alt" id="co-curricular">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Co-Curricular Activities</h2>
+        <div class="activities-grid">
+            <div class="activity-card animate-on-scroll">
+                <i class="fas fa-futbol"></i>
+                <h3>Sports</h3>
+                <p>Football, Cricket, Athletics, Badminton & more</p>
+            </div>
+            <div class="activity-card animate-on-scroll">
+                <i class="fas fa-campground"></i>
+                <h3>Scouts & Guides</h3>
+                <p>Building leadership, teamwork, and outdoor skills</p>
+            </div>
+            <div class="activity-card animate-on-scroll">
+                <i class="fas fa-music"></i>
+                <h3>Music & Dance</h3>
+                <p>Vocal, instrumental, and traditional dance forms</p>
+            </div>
+            <div class="activity-card animate-on-scroll">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Art & Craft</h3>
+                <p>Drawing, painting, and creative handicrafts</p>
+            </div>
+            <div class="activity-card animate-on-scroll">
+                <i class="fas fa-fist-raised"></i>
+                <h3>Karate</h3>
+                <p>Self-defense training and martial arts discipline</p>
+            </div>
+            <div class="activity-card animate-on-scroll">
+                <i class="fas fa-theater-masks"></i>
+                <h3>Literary & Cultural</h3>
+                <p>Debates, quizzes, drama, and cultural celebrations</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

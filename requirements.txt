@@ -1,0 +1,17 @@
+# St. Xavier's School, Harmutty - Django Website
+# Requirements file for pip install
+
+# Core Framework
+Django>=5.0,<5.1
+
+# Image processing for Faculty Profile pictures (Required by models.ImageField)
+Pillow>=10.3.0
+
+# Database Connectivity (Uncomment if using PostgreSQL production servers)
+# psycopg2-binary>=2.9.9
+
+# Production WSGI Server HTTP configuration 
+gunicorn>=22.0.0
+
+# Environment Management 
+python-dotenv>=1.0.1

@@ -1,0 +1,344 @@
+{% extends 'school_app/base.html' %}
+{% load static %}
+
+{% block title %}St. Xavier's School, Harmutty - Welcome | A Don Bosco Institution{% endblock %}
+
+{% block content %}
+<!-- ============================================================================
+     HERO CAROUSEL - Full-width image slider
+     EDIT: Change slide text or add more slides below. Each slide needs:
+     - A .carousel-slide div with an image and overlay content
+     - A corresponding indicator dot
+     ============================================================================ -->
+<section class="hero-carousel" id="hero-carousel">
+    <div class="carousel-container">
+        <!-- Slide 1 -->
+        <div class="carousel-slide active">
+            <img src="{% static 'images/Campus.png' %}" alt="St. Xavier's School Campus">
+            <div class="carousel-overlay">
+                <div class="carousel-content">
+                    <h1 class="animate-fade-in">Welcome to St. Xavier's School</h1>
+                    <p class="animate-fade-in-delay">A Don Bosco Institution nurturing young minds since inception</p>
+                    <a href="{% url 'academics' %}" class="btn btn-outline animate-fade-in-delay-2">Explore Academics</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+            <img src="{% static 'images/Campus2.png' %}" alt="Excellence in Education">
+            <div class="carousel-overlay">
+                <div class="carousel-content">
+                    <h1 class="animate-fade-in">Excellence in Education</h1>
+                    <p class="animate-fade-in-delay">CBSE affiliated Higher Secondary School shaping tomorrow's leaders</p>
+                    <a href="{% url 'campus' %}" class="btn btn-outline animate-fade-in-delay-2">Our Campus</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+            <img src="{% static 'images/Campus3.jpeg' %}" alt="Building Future Leaders">
+            <div class="carousel-overlay">
+                <div class="carousel-content">
+                    <h1 class="animate-fade-in">Building Future Leaders</h1>
+                    <p class="animate-fade-in-delay">Holistic development through academics, sports, and values</p>
+                    <a href="{% url 'contact' %}" class="btn btn-outline animate-fade-in-delay-2">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel Controls -->
+    <button class="carousel-prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+    <button class="carousel-next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+    <div class="carousel-indicators">
+        <span class="indicator active" data-slide="0"></span>
+        <span class="indicator" data-slide="1"></span>
+        <span class="indicator" data-slide="2"></span>
+    </div>
+</section>
+
+<!-- ============================================================================
+     QUICK LINKS NAVIGATION BAR
+     EDIT: Add or remove quick link items below
+     ============================================================================ -->
+<!-- <section class="quick-links-bar" id="quick-links">
+    <div class="container">
+        <div class="quick-links-grid">
+            <a href="{% url 'home' %}" class="quick-link-item animate-on-scroll">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="{% url 'academics' %}" class="quick-link-item animate-on-scroll">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Academics</span>
+            </a>
+            <a href="{% url 'campus' %}" class="quick-link-item animate-on-scroll">
+                <i class="fas fa-school"></i>
+                <span>Campus</span>
+            </a>
+            <a href="{% url 'faculty' %}" class="quick-link-item animate-on-scroll">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Faculty</span>
+            </a>
+            <a href="{% url 'notices' %}" class="quick-link-item animate-on-scroll">
+                <i class="fas fa-bullhorn"></i>
+                <span>Notices</span>
+            </a>
+            <a href="{% url 'contact' %}" class="quick-link-item animate-on-scroll">
+                <i class="fas fa-envelope-open-text"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </div>
+</section> -->
+
+<!-- ============================================================================
+     WELCOME / ABOUT SECTION
+     EDIT: Update the welcome message and about text below
+     ============================================================================ -->
+<section class="section section-alt" id="about">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Welcome to St. Xavier's School</h2>
+        <div class="welcome-content animate-on-scroll">
+            <div class="welcome-text">
+                <!-- EDIT: Change the welcome text below -->
+                <p>St. Xavier's School, Harmutty, is a premier educational institution run by the Salesians of Don Bosco. Affiliated to the Central Board of Secondary Education (CBSE) with Affiliation No. 230010, the school offers education from Nursery to Class XII (Higher Secondary). Rooted in the Salesian tradition of Don Bosco, we believe in the integral development of every child — academically, morally, socially, and spiritually.</p>
+                <p>Our mission is to create a nurturing environment where students develop into responsible citizens equipped with knowledge, skills, and values to contribute meaningfully to society. With a dedicated team of educators, modern facilities, and a vibrant campus life, St. Xavier's continues to be a beacon of quality education in Lakhimpur, Assam.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     PRINCIPAL'S DESK SECTION
+     EDIT: Update the principal's photo and message below
+     ============================================================================ -->
+<!-- Add these styles to your CSS file, or keep this style block here -->
+<style>
+    #principal-desk {
+        padding: 60px 0;
+        background-color: #f9f9f9; 
+        display: flex;
+        align-items: center;
+        min-height: auto; 
+    }
+
+    #principal-desk .principal-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr; 
+        gap: 40px;
+        align-items: center; 
+    }
+
+    #principal-desk .principal-image {
+        position: relative;
+        text-align: center; 
+    }
+
+    #principal-desk .principal-image img {
+        width: 100%;
+        max-width: 320px; 
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* --- TEXT COLORS & TYPOGRAPHY --- */
+
+    /* Section Heading Color */
+    #principal-desk .section-title {
+        color: #1e3a8a; /* Deep Navy Blue */
+        margin-bottom: 30px;
+    }
+
+    /* Principal Name Card Colors (Below Image) */
+    #principal-desk .principal-name-card h3 {
+        margin: 0 0 5px 0;
+        font-size: 1.4rem;
+        color: #ffffff; /* Deep Navy Blue */
+    }
+
+    #principal-desk .principal-name-card p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #ffffff; /* Muted Slate Gray */
+    }
+
+    /* Main Message Text Color */
+    #principal-desk .message-content p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+        font-size: 1.05rem;
+        color: #000000; /* Highly readable light Charcoal/Navy mix */
+    }
+
+    /* Quote Icon Color */
+    #principal-desk .quote-icon {
+        font-size: 2rem;
+        color: #cbd5e1; /* Soft Gray */
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    /* Signature & Closing Colors */
+    #principal-desk .principal-signature {
+        font-weight: bold;
+        margin-top: 20px;
+        color: #475569; /* light Slate */
+    }
+
+    #principal-desk .final-name-tag {
+        margin-top: 5px; 
+        font-weight: bold; 
+        color: #b91c1c; /* Crimson Red accent for the final name tag */
+    }
+
+    /* Responsive adjustment for tablets and mobile screens */
+    @media (max-width: 768px) {
+        #principal-desk .principal-grid {
+            grid-template-columns: 1fr; 
+            gap: 25px;
+        }
+        #principal-desk {
+            padding: 40px 0;
+        }
+    }
+</style>
+
+<section class="section principal-section" id="principal-desk">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">From the Principal's Desk</h2>
+        <div class="principal-grid">
+            <div class="principal-image animate-on-scroll">
+                <!-- EDIT: Replace with actual principal's photo when ready -->
+                <img src="{% static 'images/father.png' %}" alt="Fr. Joshua - Principal, St. Xavier's School">
+                <div class="principal-name-card">
+                    <h3>Fr. Joshua</h3>
+                    <p>Principal, St. Xavier's School, Harmutty</p>
+                </div>
+            </div>
+            <div class="principal-message animate-on-scroll">
+                <div class="message-content">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>Dear Students, Parents, and Well-wishers,</p>
+                    <p>It gives me immense joy to welcome you to the online home of St. Xavier's School, Harmutty. As a Don Bosco Institution, we are guided by the preventive system of education envisioned by our founder, St. John Bosco — a system based on reason, religion, and loving-kindness.</p>
+                    <p>Our school strives to provide an environment where every child feels valued, inspired, and empowered to reach their fullest potential. We believe that education is not merely about academic excellence, but about building character, nurturing creativity, and instilling a sense of responsibility towards society and the environment.</p>
+                    <p>I invite you to explore our website and discover the many opportunities that St. Xavier's School offers. Together, let us continue to build a brighter future for our children.</p>
+                    <p class="principal-signature">With warm regards and God's blessings,</p>
+                    <p class="final-name-tag">Fr. Joshua</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ============================================================================
+     LATEST NOTICES SECTION - Dynamic from database
+     Notices are managed via the Django admin panel at /admin/
+     No code changes needed to add/edit/delete notices
+     ============================================================================ -->
+<section class="section section-alt" id="notices">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Latest Notices & Circulars</h2>
+        <div class="notices-grid">
+            {% for notice in notices %}
+            <article class="notice-card animate-on-scroll">
+                <div class="notice-date">
+                    <span class="notice-day">{{ notice.published_date|date:"d" }}</span>
+                    <span class="notice-month">{{ notice.published_date|date:"M" }}</span>
+                    <span class="notice-year">{{ notice.published_date|date:"Y" }}</span>
+                </div>
+                <div class="notice-content">
+                    <h3 class="notice-title">{{ notice.title }}</h3>
+                    {% if notice.description %}
+                    <p class="notice-description">{{ notice.description|truncatewords:25 }}</p>
+                    {% endif %}
+                    <a href="{{ notice.pdf_file.url }}" class="btn-download" target="_blank" rel="noopener">
+                        <i class="fas fa-file-pdf"></i> Download PDF
+                    </a>
+                </div>
+            </article>
+            {% empty %}
+            <div class="no-notices">
+                <i class="fas fa-bell-slash"></i>
+                <p>No notices available at this time. Check back later for updates.</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% if notices %}
+        <div class="section-cta">
+            <a href="{% url 'notices' %}" class="btn btn-primary">View All Notices</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+
+<!-- ============================================================================
+     QUICK STATS SECTION - Animated counters
+     EDIT: Update the numbers and labels below
+     ============================================================================ -->
+<section class="section stats-section" id="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <!-- EDIT: Update statistics below -->
+            <div class="stat-card animate-on-scroll">
+                <i class="fas fa-user-graduate"></i>
+                <span class="counter-number" data-target="2000">0</span>
+                <span class="stat-suffix">+</span>
+                <p class="stat-label">Students</p>
+            </div>
+            <div class="stat-card animate-on-scroll">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span class="counter-number" data-target="60">0</span>
+                <span class="stat-suffix">+</span>
+                <p class="stat-label">Dedicated Faculty</p>
+            </div>
+            <div class="stat-card animate-on-scroll">
+                <i class="fas fa-award"></i>
+                <span class="counter-number" data-target="30">0</span>
+                <span class="stat-suffix">+</span>
+                <p class="stat-label">Years of Excellence</p>
+            </div>
+            <div class="stat-card animate-on-scroll">
+                <i class="fas fa-trophy"></i>
+                <span class="counter-number" data-target="100">0</span>
+                <span class="stat-suffix">%</span>
+                <p class="stat-label">CBSE Results</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================================
+     GALLERY PREVIEW SECTION
+     EDIT: Add or change gallery images below
+     ============================================================================ -->
+<section class="section" id="gallery-preview">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Campus Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item animate-on-scroll">
+                <img src="{% static 'images/IMG_1381.png' %}" alt="School Building">
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="{% static 'images/IMG_1373.jpeg' %}" alt="School Activities">
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="{% static 'images/IMG_1382.png' %}" alt="Students">
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="{% static 'images/IMG_1383.png' %}" alt="Campus Life">
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="{% static 'images/IMG_1375.jpeg' %}" alt="School Events">
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="{% static 'images/Campus4.png' %}" alt="School Campus View">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

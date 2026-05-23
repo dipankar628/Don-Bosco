@@ -1,0 +1,130 @@
+{% extends 'school_app/base.html' %}
+{% load static %}
+
+{% block title %}Our Faculty - St. Xavier's School, Harmutty{% endblock %}
+
+{% block content %}
+<!-- Page Banner -->
+<section class="page-banner" style="background-image: url('{% static "images/campus4.png" %}');">
+    <div class="banner-overlay">
+        <div class="banner-content">
+            <h1>Our Faculty</h1>
+            <p class="breadcrumb"><a href="{% url 'home' %}">Home</a> / Faculty</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     FACULTY INTRODUCTION
+     EDIT: Update faculty introduction text below
+     ============================================================================ -->
+<section class="section" id="faculty-intro">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Meet Our Dedicated Educators</h2>
+        <div class="faculty-intro-text animate-on-scroll">
+            <p>At St. Xavier's School, Harmutty, we are blessed with a team of passionate, experienced, and highly qualified educators who are committed to shaping the future of our students. Our faculty members bring a wealth of knowledge, dedication, and the Salesian spirit of loving-kindness to the classroom every day. They are mentors, guides, and role models who go beyond textbooks to inspire a lifelong love of learning.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     FACULTY GRID
+     EDIT: To add a new faculty member, copy one faculty-card block and update
+     the image, name, designation, and subject. To remove, simply delete the block.
+     ============================================================================ -->
+<section class="section section-alt" id="faculty-grid">
+    <div class="container">
+        <div class="faculty-grid">
+
+            <!-- ============ FACULTY CARD START ============ -->
+            <!-- EDIT: Faculty Member 1 -->
+            <div class="faculty-card animate-on-scroll">
+                <div class="faculty-image">
+                    <img src="{% static 'images/gallery-1.png' %}" alt="Faculty Member">
+                </div>
+                <h3 class="faculty-name">Fr. Joseph Mathew</h3>
+                <p class="faculty-designation">Principal</p>
+                <p class="faculty-subject">Administration & Guidance</p>
+            </div>
+            <!-- ============ FACULTY CARD END ============ -->
+
+            <!-- EDIT: Faculty Member 2 -->
+            <div class="faculty-card animate-on-scroll">
+                <div class="faculty-image">
+                    <img src="{% static 'images/hero-2.png' %}" alt="Faculty Member">
+                </div>
+                <h3 class="faculty-name">Mrs. Anjali Sharma</h3>
+                <p class="faculty-designation">Vice Principal</p>
+                <p class="faculty-subject">English Literature</p>
+            </div>
+
+            <!-- EDIT: Faculty Member 3 -->
+            <div class="faculty-card animate-on-scroll">
+                <div class="faculty-image">
+                    <img src="{% static 'images/gallery-2.png' %}" alt="Faculty Member">
+                </div>
+                <h3 class="faculty-name">Mr. Rajiv Borah</h3>
+                <p class="faculty-designation">Senior Teacher</p>
+                <p class="faculty-subject">Physics</p>
+            </div>
+
+            <!-- EDIT: Faculty Member 4 -->
+            <div class="faculty-card animate-on-scroll">
+                <div class="faculty-image">
+                    <img src="{% static 'images/hero-1.png' %}" alt="Faculty Member">
+                </div>
+                <h3 class="faculty-name">Mrs. Priya Gogoi</h3>
+                <p class="faculty-designation">Senior Teacher</p>
+                <p class="faculty-subject">Mathematics</p>
+            </div>
+
+            <!-- EDIT: Faculty Member 5 -->
+            <div class="faculty-card animate-on-scroll">
+                <div class="faculty-image">
+                    <img src="{% static 'images/hero-3.png' %}" alt="Faculty Member">
+                </div>
+                <h3 class="faculty-name">Mr. Kamal Hazarika</h3>
+                <p class="faculty-designation">Head of Department</p>
+                <p class="faculty-subject">Chemistry</p>
+            </div>
+
+            <!-- EDIT: Faculty Member 6 -->
+            <div class="faculty-card animate-on-scroll">
+                <div class="faculty-image">
+                    <img src="{% static 'images/gallery-1.png' %}" alt="Faculty Member">
+                </div>
+                <h3 class="faculty-name">Mrs. Deepa Saikia</h3>
+                <p class="faculty-designation">Teacher</p>
+                <p class="faculty-subject">Biology</p>
+            </div>
+
+            <!-- EDIT: Faculty Member 7 -->
+            <div class="faculty-card animate-on-scroll">
+                <div class="faculty-image">
+                    <img src="{% static 'images/gallery-2.png' %}" alt="Faculty Member">
+                </div>
+                <h3 class="faculty-name">Mr. Bhaskar Das</h3>
+                <p class="faculty-designation">Teacher</p>
+                <p class="faculty-subject">Computer Science</p>
+            </div>
+
+            <!-- EDIT: Faculty Member 8 -->
+            <div class="faculty-card animate-on-scroll">
+                <div class="faculty-image">
+                    <img src="{% static 'images/hero-2.png' %}" alt="Faculty Member">
+                </div>
+                <h3 class="faculty-name">Mrs. Ritu Devi</h3>
+                <p class="faculty-designation">Teacher</p>
+                <p class="faculty-subject">Hindi & Social Science</p>
+            </div>
+
+            <!-- ============================================================
+                 TO ADD MORE FACULTY MEMBERS:
+                 Copy the block between "FACULTY CARD START" and "FACULTY CARD END"
+                 comments above, paste it here, and update the details.
+                 ============================================================ -->
+
+        </div>
+    </div>
+</section>
+{% endblock %}

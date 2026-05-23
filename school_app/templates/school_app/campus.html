@@ -1,0 +1,102 @@
+{% extends 'school_app/base.html' %}
+{% load static %}
+
+{% block title %}Campus - St. Xavier's School, Harmutty{% endblock %}
+
+{% block content %}
+<!-- Page Banner -->
+<section class="page-banner" style="background-image: url('{% static "images/Campus.png" %}');">
+    <div class="banner-overlay">
+        <div class="banner-content">
+            <h1>Our Campus</h1>
+            <p class="breadcrumb"><a href="{% url 'home' %}">Home</a> / Campus</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     CAMPUS OVERVIEW
+     EDIT: Update campus description below
+     ============================================================================ -->
+<section class="section" id="campus-overview">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">A Campus That Inspires</h2>
+        <div class="campus-intro animate-on-scroll">
+            <!-- EDIT: Update campus overview text below -->
+            <p>Nestled amidst the lush greenery of Harmutty in the Lakhimpur district of Assam, St. Xavier's School boasts a sprawling campus that provides the ideal environment for learning and growth. The campus is designed to foster both academic excellence and holistic development, with modern facilities set against the serene backdrop of nature. From well-equipped classrooms to expansive sports grounds, every corner of our campus is designed to inspire young minds.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     FACILITIES GRID
+     EDIT: Update facility names, icons, or descriptions below
+     ============================================================================ -->
+<section class="section section-alt" id="facilities">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Our Facilities</h2>
+        <div class="facilities-grid">
+            <div class="facility-card animate-on-scroll">
+                <i class="fas fa-chalkboard"></i>
+                <h3>Smart Classrooms</h3>
+                <p>Technology-enabled classrooms with digital boards, projectors, and audio-visual aids for interactive and engaging learning experiences.</p>
+            </div>
+            <div class="facility-card animate-on-scroll">
+                <i class="fas fa-flask"></i>
+                <h3>Science Laboratories</h3>
+                <p>Fully equipped Physics, Chemistry, and Biology labs providing hands-on experimental learning for students of all levels.</p>
+            </div>
+            <div class="facility-card animate-on-scroll">
+                <i class="fas fa-desktop"></i>
+                <h3>Computer Lab</h3>
+                <p>Modern computer laboratory with high-speed internet connectivity, enabling students to develop essential digital literacy skills.</p>
+            </div>
+            <div class="facility-card animate-on-scroll">
+                <i class="fas fa-book-open"></i>
+                <h3>Library</h3>
+                <p>A well-stocked library with thousands of books, reference materials, journals, and periodicals to cultivate the reading habit.</p>
+            </div>
+            <div class="facility-card animate-on-scroll">
+                <i class="fas fa-running"></i>
+                <h3>Sports Ground</h3>
+                <p>Expansive sports fields for football, cricket, athletics, and other outdoor games, promoting physical fitness and teamwork.</p>
+            </div>
+            <div class="facility-card animate-on-scroll">
+                <i class="fas fa-church"></i>
+                <h3>Chapel</h3>
+                <p>A beautiful chapel within the campus for spiritual reflection, prayer services, and fostering moral and ethical values.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     CAMPUS GALLERY
+     EDIT: Add or change gallery images below
+     ============================================================================ -->
+<section class="section" id="campus-gallery">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Campus Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-item-wide animate-on-scroll">
+                <img src="{% static 'images/Campus.png' %}" alt="School Main Building">
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="{% static 'images/Campus2.png' %}" alt="School Activities">
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="{% static 'images/campus4.png' %}" alt="Campus View">
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="{% static 'images/campus5.jpeg' %}" alt="Students at Work">
+            </div>
+            <div class="gallery-item gallery-item-wide animate-on-scroll">
+                <img src="{% static 'images/hero-3.png' %}" alt="School Grounds">
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="{% static 'images/hero-1.png' %}" alt="School Events">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
